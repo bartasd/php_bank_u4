@@ -1,0 +1,71 @@
+<?php
+
+$acc = [
+    (object)[
+        "id" => '1',
+        "name" => "Homer",
+        "surname" => "Simpson",
+        "id_code" => 36202025172,
+        "iban" => "LT979610532884735825",
+        "balance" => 899
+    ],
+    (object)[
+        "id" => 2,
+        "name" => "Marge",
+        "surname" => "Simpson",
+        "id_code" => 46109087480,
+        "iban" => "LT943837424217349653",
+        "balance" => 7000
+    ],
+    (object)[
+        "id" => 3,
+        "name" => "Bart",
+        "surname" => "Simpson",
+        "id_code" => 38903038853,
+        "iban" => "LT339004342676933971",
+        "balance" => 125
+    ],
+    (object)[
+        "id" => 4,
+        "name" => "Lisa",
+        "surname" => "Simpson",
+        "id_code" => 48603142179,
+        "iban" => "LT672398336831188604",
+        "balance" => 1183
+    ],
+    (object)[
+        "id" => 5,
+        "name" => "Maggie",
+        "surname" => "Simpson",
+        "id_code" => 62202063919,
+        "iban" => "LT604791325036625292",
+        "balance" => 56.5
+    ],
+    (object)[
+        "id" => 6,
+        "name" => "Bartas",
+        "surname" => "Dausynas",
+        "id_code" => 38903031667,
+        "iban" => "LT980329863924922131",
+        "balance" => 6.5
+    ],
+    (object)[
+        "id" => 7,
+        "name" => "Vasare",
+        "surname" => "Dausynaite",
+        "id_code" => 62202068589,
+        "iban" => "LT302157739026471641",
+        "balance" => 1315015
+    ],
+    (object)[
+        "id" => 8,
+        "name" => "Benas",
+        "surname" => "Katinas",
+        "id_code" => 51606061289,
+        "iban" => "LT268877971842953573",
+        "balance" => 6
+    ]
+];
+
+file_put_contents(__DIR__.'/../data/acc.json', json_encode($acc));
+file_put_contents(__DIR__.'/../data/accCount.json', json_encode(count($acc)+1));

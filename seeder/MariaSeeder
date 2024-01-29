@@ -1,0 +1,57 @@
+<?php
+
+$acc = [
+    (object)[
+    "id" => '12',
+    "name" => "David",
+    "surname" => "Hasselhoff",
+    "id_code" => "36407218841",
+    "iban" => "LT532976869351804306",
+    "balance" => 56900,
+    "deleted" => 0
+    ],
+    (object)[
+        "id" => '13',
+        "name" => "Matthew",
+        "surname" => "McConaughey",
+        "id_code" => "36907011430",
+        "iban" => "LT584167187017800152",
+        "balance" => 11641900,
+        "deleted" => 0
+        ]
+];
+$table = "accounts";
+
+$host = 'localhost';
+$db   = "php_bank";
+$user = 'root';
+$pass = '';
+$charset = 'utf8mb4';
+
+$dsn = "mysql:host=$host;dbname=$db;charset=$charset;unix_socket=/opt/lampp/var/mysql/mysql.sock";
+$options = [
+    PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+    PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+    PDO::ATTR_EMULATE_PREPARES   => false,
+];
+
+$pdo = new PDO($dsn, $user, $pass, $options);
+
+$sql = "
+INSERT INTO {$table} (id, name, surname, id_code, iban, balance, deleted)
+VALUES (:id, :name, :surname, :id_code, :iban, :balance, :deleted)
+";
+
+$stmt = $pdo->prepare($sql);
+
+foreach ($acc as $account) {
+    $stmt->execute([
+        'id' => $account->id,
+        'name' => $account->name,
+        'surname' => $account->surname,
+        'id_code' => $account->id_code,
+        'iban' => $account->iban,
+        'balance' => $account->balance,
+        'deleted' => $account->deleted
+    ]);
+}

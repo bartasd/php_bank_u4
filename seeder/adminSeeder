@@ -1,0 +1,16 @@
+<?php
+
+$admins = [
+    (object)[
+        "user" => "admin",
+        "pass" => "21232f297a57a5a743894a0e4a801fc3"
+    ],
+    (object)[
+        "user" => "piggie",
+        "pass" => "996377ceb46e21b60005fa5d7ca8224f"
+    ]
+];
+
+file_put_contents(__DIR__.'/../data/admins.json', json_encode($admins));
+file_put_contents(__DIR__.'/../data/adminsCount.json', json_encode(count($admins)+1));
+

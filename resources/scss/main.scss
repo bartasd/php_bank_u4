@@ -1,0 +1,368 @@
+@import "bootstrap/scss/bootstrap.scss";
+
+$navMargin: 120px;
+$green: rgb(73, 197, 214);
+$purple: rgb(214, 205, 205);
+$purple2: rgb(128, 128, 125);
+$shadow: rgba(110, 109, 88, 0.8);
+$letters: rgb(186, 186, 177);
+$letters2: rgb(45, 62, 66);
+$quad: 400px;
+$stbl: 700px;
+
+body,
+body * {
+  margin: 0;
+  position: relative;
+}
+
+.navi {
+  position: absolute;
+  height: 60px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 30px $shadow;
+  z-index: 1;
+}
+
+.logo {
+  margin-left: $navMargin;
+}
+
+.links {
+  margin-right: $navMargin;
+}
+
+.navi a,
+.navi p {
+  text-decoration: none;
+  color: $letters;
+  font-size: 1.5rem;
+  animation-name: brand2;
+  animation-duration: 1s;
+}
+
+@keyframes brand {
+  from {
+    color: $letters;
+  }
+  to {
+    color: $purple2;
+  }
+}
+
+@keyframes brand2 {
+  from {
+    color: $purple2;
+  }
+  to {
+    color: $letters;
+  }
+}
+
+@keyframes links {
+  from {
+    color: $green;
+  }
+  to {
+    color: $letters;
+  }
+}
+
+@keyframes links2 {
+  from {
+    color: $green;
+  }
+  to {
+    color: $letters;
+  }
+}
+
+.navi a:hover,
+.navi p:hover {
+  animation-name: brand;
+  animation-duration: 1s;
+}
+
+.links a:hover {
+  animation-name: links;
+  animation-duration: 2s;
+}
+
+.links a {
+  animation-name: links2;
+  animation-duration: 2s;
+}
+
+.links a:not(:first-child) {
+  margin-left: 30px;
+}
+
+.workArea {
+  position: absolute;
+  top: 60px;
+  width: 100vw;
+  background: linear-gradient(144deg, $purple 48%, $green 100%);
+  background-size: cover;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:100%;
+}
+
+
+.workArea .cont {
+  margin-top: 130px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  color: $letters;
+  font-size: 1.5rem;
+}
+
+.stabilizer {
+  position: absolute;
+  left: calc(50vw - 350px);
+  top: calc(50vh - 200px);
+  width: $stbl;
+  display: flex;
+  align-items: center;
+}
+
+.login {
+  background: linear-gradient(144deg, $purple 48%, $green 100%);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: $quad;
+  height: $quad;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 15px 15px 30px $shadow;
+  border-radius: 10px;
+}
+
+.loginBrand {
+  box-shadow: -15px 15px 30px $shadow;
+  border-radius: 10px;
+  width: $quad;
+  height: $quad;
+}
+
+.loginForm label {
+  color: $letters2;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+}
+
+.loginForm input {
+  color: $letters2;
+}
+
+.submitBtn {
+  margin-top: 1rem;
+  border-radius: 5px;
+  width: 200px;
+}
+
+.table {
+  background-color: none;
+}
+
+.table tr.listing:hover,
+.table td:hover,
+.table a:hover {
+  border-color: #407861;
+  color: #407861;
+}
+
+.table,
+.table th,
+.table td,
+.table a,
+.table tr {
+  text-align: center;
+  text-decoration: none;
+  color: #a23c3c;
+  font-size: 1rem;
+}
+
+.controls {
+  cursor: pointer;
+}
+
+.table-no-bg {
+  --bs-table-bg: transparent;
+}
+
+.editCont {
+  display: flex;
+  flex-direction: column;
+  color: #407861;
+  width: 350px;
+  height: 350px;
+  justify-content: space-around;
+  align-items: center;
+}
+.editCont form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.editCont > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.delete_form button {
+  color: #a23c3c;
+}
+
+.deleteCont a {
+  text-decoration: none;
+  color: white;
+}
+
+.form label {
+  margin-bottom: 20px;
+}
+
+.createCont {
+  margin-top: 100px;
+  justify-content: flex-start;
+  height: 500px;
+}
+
+.createCont label {
+  margin-top: 15px;
+}
+
+.edit_title {
+  text-align: center;
+}
+.msgCont {
+  width: 600px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: calc(50vh - 300px);
+  left: calc(50% - 300px);
+}
+
+.msg {
+  text-align: center;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes success {
+  0% {
+    color: $letters2;
+  }
+  100% {
+    color: #407861;
+  }
+}
+
+@keyframes error {
+  0% {
+    color: $letters2;
+  }
+  100% {
+    color: #a23c3c;
+  }
+}
+
+.success {
+  animation-name: success;
+}
+
+.error {
+  animation-name: error;
+}
+
+.msg-create {
+  position: absolute;
+  top: -250px;
+}
+
+.p404 {
+  width: 800px;
+  height: 800px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.p404 p {
+  margin-bottom: 20px;
+  color: $letters2;
+}
+.p404 h1 {
+  font-size: 6rem;
+  color: $letters2;
+}
+
+.p404 h2 {
+  color: $letters2;
+}
+.p404 p:first-of-type {
+  margin-top: 20px;
+}
+
+.m404 {
+  top: 0px;
+  height: 100vh;
+}
+
+.btn404 a {
+  text-decoration: none;
+  color: white;
+}
+
+.acc-area{
+  flex-direction: column;
+}
+
+.chkDB{
+  position: absolute;
+  left:0;
+  top: 0;
+  height: 100px;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.chkDB p{
+  color: #474747
+}
+
+.chkDB2 label{
+  color: #a23c3c;
+}
+
+.check-with-label:checked + .label-for-check {
+  color: #407861;
+}

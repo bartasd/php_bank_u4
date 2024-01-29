@@ -1,0 +1,15 @@
+{
+  "name": "bartas/u3",
+  "autoload": {
+    "psr-4": {
+      "Bank\\": ""
+    }
+  },
+  "authors": [
+    {
+      "name": "Bartas",
+      "email": "bartas3@gmail.com"
+    }
+  ],
+  "require": {}
+}
